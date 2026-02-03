@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Agendamento de Salas — Demo</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <header>
+    <h1>Agendamento de Salas</h1>
+    <div class="muted">Demo simples (localStorage)</div>
+  </header>
+
+  <section class="card">
+    <div><strong>Nova reserva</strong></div>
+
+    <label for="room">Sala</label>
+    <select id="room"></select>
+
+    <div class="row">
+      <div class="flex-1">
+        <label for="start">Início</label>
+        <input id="start" type="datetime-local">
+      </div>
+      <div class="flex-1">
+        <label for="end">Término</label>
+        <input id="end" type="datetime-local">
+      </div>
+    </div>
+
+    <div class="actions-row">
+      <button id="bookBtn">Reservar</button>
+      <div id="status" class="muted"></div>
+    </div>
+
+    <div class="hint">Dica: use horários no formato local do seu navegador.</div>
+  </section>
+
+  <section class="card">
+    <div class="section-header">
+      <div><strong>Reservas</strong></div>
+      <div class="muted">Filtre por sala</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Sala</th><th>Início</th><th>Término</th><th>Usuário</th><th></th></tr>
+      </thead>
+      <tbody id="bookingsList"></tbody>
+    </table>
+
+    <div id="noBookings" class="muted">Nenhuma reserva encontrada.</div>
+  </section>
+
+  <script src="Script.js"></script>
+</body>
+</html>
