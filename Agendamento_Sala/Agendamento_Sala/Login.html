@@ -1,0 +1,308 @@
+<!-- Define o idioma da página como português do Brasil -->
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>CADASTRO</title>
+
+<style>
+
+* { /* Zera margens e paddings de todos os elementos */
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+header { /* Estilo do cabeçalho fixo no topo da página */
+width: 100%;
+background-color: #0e4194;
+color: white;
+padding: 20px 0;
+text-align: center;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1000;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+html, body { /* Estilo geral do corpo da página */
+height: 100%;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(to bottom, #b8bfec, #0e4194);
+flex-direction: column;
+align-items: center;
+padding-top: 0px;
+padding: 50px;
+}
+
+.container-form-result { /* Agrupamento do formulário e resultado */
+display: flex;
+justify-content: center;
+align-items: flex-start;
+gap: 40px;
+flex-wrap: wrap;
+margin-top: 100px;
+}
+
+form, .resultado-lado { /* Estilo do formulário e da caixa de resultado */
+background-color: #fff;
+padding: 70px;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+width: 400px;
+}
+
+button { /* Botão */
+width: 100%;
+height: 40px;
+background-color: #8488ff;
+color: white;
+font-size: 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin-top: 20px;
+box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+transition: all 0.3s ease;
+}
+
+button:hover { /* Efeito hover no botão */
+background-color: #363b9e;
+transform: scale(1.05);
+}
+
+label { /* Estilo dos rótulos dos campos */
+display: block;
+margin-bottom: 15px;
+color: #444;
+font-weight: 500;
+}
+
+input { /* Entrada */
+width: 100%;
+height: 35px;
+padding: 5px 10px;
+font-size: 14px;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin-top: 5px;
+}
+
+#mensagem-validacao { /* Estilo da mensagem de validação */
+text-align: center;
+margin-top: 15px;
+color:#0e4194;
+font-weight: bold;
+display: none;
+}
+
+.resultado-lado p { /* Estilo dos parágrafos exibidos com os dados */
+margin: 8px 0;
+font-size: 14px;
+}
+
+nav a { /* Estilo do botão de navegação */
+background-color:#363a9E;
+color: white;
+padding: 10px 20px;
+border-radius: 5px;
+text-decoration: none;
+display: inline-block;
+transition: all 0.3s ease;
+box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+nav a:hover { /* Efeito hover no botão de navegação */
+background-color: #18135f;
+transform: scale(1.05);
+}
+
+.botao-voltar { /* Estilo do botão de voltar no cabeçalho */
+background-color: white;
+color: #363a9e;
+padding: 8px 16px;
+border-radius: 5px;
+text-decoration: none;
+font-weight: bold;
+transition: all 0.3s ease;
+box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.botao-voltar:hover { /* Estilo hover no botão voltar */
+background-color: #363a9e;
+color: white;
+transform: scale(1.05);
+}
+
+.logo-botao { /* Estilo da logo */
+position: fixed;
+bottom: 10px;
+left: 10px;
+background-color: #d1d1f7; 
+padding: 6px;
+border-radius: 10px;
+box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+transition: all 0.3s ease;
+}
+
+.logo-botao img { /* Imagem da logo */
+height: 70px;
+display: block;
+}
+
+.logo-botao:hover { /* Efeito hover na logo */
+background-color: #9297f0;
+transform: scale(1.05);
+}
+
+</style>
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+<h1 style="font-size: 30px; color: white;">LOGIN</h1>
+<a href="Home.html" class="botao-voltar">Voltar</a>
+</div>
+</header>
+
+<!-- Formulário + Resultado Lado a Lado -->
+<div class="container-form-result">
+
+<!-- Formulário -->
+<form id="formulario">
+<h2 style="text-align: center; color: #0e4194; margin-bottom: 20px; padding: 10px;">CADASTRE-SE</h2>
+
+<label>Nome:
+<input type="text" id="nome" required>
+</label>
+
+<label>Idade:
+<input type="number" id="idade" required>
+</label>
+
+<label>Email:
+<input type="email" id="email" required>
+</label>
+
+<label>Telefone:
+<input type="tel" id="telefone" required>
+</label>
+
+<button type="submit">ENVIAR</button>
+</form>
+
+<!-- Resultado -->
+<div id="resultado" class="resultado-lado" style="display: none;">
+
+<h3 style="text-align: center; color: #0e4194;">DADOS COLETADOS</h3>
+
+<p><strong>NOME: </strong><span id="res-nome"></span></p>
+<p><strong>IDADE: </strong><span id="res-idade"></span></p>
+<p><strong>E-MAIL: </strong><span id="res-email"></span></p>
+<p><strong>TELEFONE: </strong><span id="res-telefone"></span></p>
+
+<button onclick="gerarPDF()" style="margin-top: 20px;">GERAR PDF</button>
+
+<p id="mensagem-validacao">CADASTRADO COM SUCESSO!</p>
+
+<nav style="text-align: center; margin-top: 20px;">
+<a href="Home.html">VOLTAR À TELA INICIAL</a>
+</nav>
+
+</div>
+
+<!-- Biblioteca para gerar PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- Validação e Exibição -->
+<script>
+const nomeInput = document.getElementById('nome');
+nomeInput.oninvalid = () => nomeInput.setCustomValidity('Por favor, preencha seu nome.');
+nomeInput.oninput = () => nomeInput.setCustomValidity('');
+
+const idadeInput = document.getElementById('idade');
+idadeInput.oninvalid = () => idadeInput.setCustomValidity('Por favor, insira sua idade.');
+idadeInput.oninput = () => idadeInput.setCustomValidity('');
+
+const emailInput = document.getElementById('email');
+emailInput.oninvalid = () => emailInput.setCustomValidity('Por favor, insira um e-mail válido.');
+emailInput.oninput = () => emailInput.setCustomValidity('');
+
+const telefoneInput = document.getElementById('telefone');
+telefoneInput.oninvalid = () => telefoneInput.setCustomValidity('Por favor, insira seu telefone.');
+telefoneInput.oninput = () => telefoneInput.setCustomValidity('');
+
+/* Enviar o formulário */
+document.getElementById("formulario").addEventListener("submit", function (event) {
+event.preventDefault();
+
+/* Validações */
+const idade = parseInt(idadeInput.value, 10);
+if (isNaN(idade) || idade <= 1 || idade > 100) {
+alert('Por favor, insira uma idade válida entre 1 e 100 anos.');
+idadeInput.focus();
+return;
+}
+
+const telefone = telefoneInput.value.trim().replace(/\D/g, '');
+const regexTelefone = /^\d{10,11}$/;
+if (!regexTelefone.test(telefone)) {
+alert('Telefone inválido. Use 10 ou 11 dígitos (com DDD).');
+return;
+}
+
+const nome = nomeInput.value.trim();
+const partesNome = nome.split(/\s+/); 
+if (partesNome.length < 2) {
+alert('Por favor, digite seu nome completo (nome e sobrenome).');
+nomeInput.focus();
+return;
+}
+
+/* Exibição de dados */
+document.getElementById('res-nome').textContent = nomeInput.value;
+document.getElementById('res-idade').textContent = idade;
+document.getElementById('res-email').textContent = emailInput.value;
+document.getElementById('res-telefone').textContent = telefone;
+document.getElementById('resultado').style.display = 'block';
+document.getElementById('mensagem-validacao').style.display = 'block';
+document.getElementById('resultado').scrollIntoView({ behavior: 'smooth' });
+});
+
+/* Função para gerar o pdf */
+function gerarPDF() {
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF();
+let y = 10;
+
+function addTexto(titulo, texto) {
+doc.setFont("helvetica", "bold");
+doc.text(titulo, 10, y);
+y += 6;
+doc.setFont("helvetica", "normal");
+const linhas = doc.splitTextToSize(texto, 180);
+doc.text(linhas, 10, y);
+y += linhas.length * 6 + 4;
+}
+
+addTexto("Nome", document.getElementById("res-nome").textContent);
+addTexto("Idade", document.getElementById("res-idade").textContent);
+addTexto("Email", document.getElementById("res-email").textContent);
+addTexto("Telefone", document.getElementById("res-telefone").textContent);
+
+/* Salvar o pdf */
+doc.save("cadastro.pdf");
+}
+
+</script>
+
+<!-- Logo -->
+<a class="logo-botao">
+<img src="icons/SENAI_logo.png" 
+alt="Logo">
+</a>
+
+</body>
+</html
