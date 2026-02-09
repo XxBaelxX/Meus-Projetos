@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <title>Sala Senai</title>
+   <link rel="stylesheet" href="Style.css">
+</head>
+<body class="home">
+    <main id="main">
+    <header class="home-header gradient-overlay  shadow">
+        <section class="main-header flex">
+            <div class="container">
+        <img src="icons/SENAI_logo.png" alt="Logo Senai" class="logo">
+        <h1>Sistema de Agendamento de Salas SENAI</h1>
+
+        <div class="main-header__two">
+            <div class="main-header__form">
+                 <div class="main-header__form__header">
+                    <nav>
+                        <ul class="main-header__list" aria-label="contem 2 seção, login e cadastro">
+                            <li 
+                                data-target="Login" 
+                                class="tab main-header__list__items active bold" id="tab0" 
+                                aria-expanded="true"
+                                aria-label="Login"
+                            >
+                                LOGIN
+                            </li>
+                            <li 
+                                data-target="Cadastro" 
+                                class="tab main-header__list__items bold" 
+                                id="tab1" 
+                                aria-expanded="false"
+                                aria-label="cadastro"
+                            >
+                                CADASTRO
+                            </li>
+                        </ul>
+                    </nav>
+                 </div>
+                 <div class="main-header__form__body px-lg">
+                  <div class="main-header__signin content active" data-content="Login" id="content0">
+                    <form id="signin-form" class="form__content" novalidate form-validade>
+    <div id="form__content-server-messages"></div>
+        <input type="hidden" name="CRAFT_CSRF_TOKEN" value="jDfBEgU-mXbfAPeP7yQEnfc1WWsc0kN90HtZ0LtscAucs_CHM7bQa_xHiSFSCPozvnGv6qtmR9KTDDM5Reo2L5kTK7qIKgN_xvjE9EmA5Ds=">
+    <div class="row">
+        <div class="col-12 col-md-12 pb-md mb-lg flex flex--center-x">
+           <div class="form__input-wrapper">
+                <fieldset class="input-group ">
+    <input
+        type="text"
+        id="usernameSignin"
+        name="username"
+        data-errorMessage="Preencha o campo obrigatório."
+        data-messageError="Revise seus dados"
+        class="input email contato__input"
+        value=""
+         data-minlength="3"                  required="1"          placeholder="E-mail*"          autocomplete="off"                         required
+            >
+            <label for="usernameSignin" class="block pb-sm ">E-mail*</label>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13.961" height="13.961" viewBox="0 0 13.961 13.961" class="icon-error">
+        <g id="layer1" transform="translate(0 -280.067)">
+          <path id="path10598" d="M6.981,280.067a6.98,6.98,0,1,0,6.98,6.98,6.98,6.98,0,0,0-6.98-6.98Zm0,3.024a.96.96,0,0,1,1,1l-.493,3.851a.509.509,0,1,1-1.018,0l-.493-3.851a.96.96,0,0,1,1-1Zm0,6.142a.885.885,0,1,1-.885.885A.883.883,0,0,1,6.981,289.233Z" fill="#d6000f"/>
+        </g>
+      </svg>
+    
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="icon-success" >
+      <g id="_1491001_check_done_ok_icon" data-name="1491001_check_done_ok_icon" transform="translate(0 0.475)">
+        <circle id="Elipse_120" data-name="Elipse 120" cx="7" cy="7" r="7" transform="translate(1 0.525)" fill="#b9c966"/>
+        <path id="Caminho_23287" data-name="Caminho 23287" d="M8.977,14.013h0a.491.491,0,0,1-.442-.189L6.706,11.743a.626.626,0,1,1,.946-.82L9.04,12.5l3.974-3.911a.624.624,0,0,1,.883.883L9.418,13.824A.681.681,0,0,1,8.977,14.013Z" transform="translate(-2.417 -3.142)" fill="#fff"/>
+        <rect id="Retângulo_39728" data-name="Retângulo 39728" width="16" height="16" transform="translate(0 -0.475)" fill="none"/>
+      </g>
+    </svg>
+    
+    <span class="error-message font-italic text-danger pl-md" id="usernameSignin-message-error"></span>
+
+    </fieldset>
+           </div>
+        </div>
+        <div class="col-12 col-md-12 pb-md mb-lg flex flex--center-x">
+            <div class="form__input-wrapper">
+                <fieldset class="input-group ">
+    <input
+        type="password"
+        id="passwordSignin"
+        name="password"
+        data-errorMessage="Preencha o campo obrigatório."
+        data-messageError="Revise seus dados"
+        class="input contato__input"
+        value=""
+         data-minlength="3"                  required="1"          placeholder="Senha*"          autocomplete="off"                  data-input="show-password"         required
+            >
+            <label for="passwordSignin" class="block pb-sm ">Senha*</label>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13.961" height="13.961" viewBox="0 0 13.961 13.961" class="icon-error" style="opacity: 0;left:40px;">
+        <g id="layer1" transform="translate(0 -280.067)">
+          <path id="path10598" d="M6.981,280.067a6.98,6.98,0,1,0,6.98,6.98,6.98,6.98,0,0,0-6.98-6.98Zm0,3.024a.96.96,0,0,1,1,1l-.493,3.851a.509.509,0,1,1-1.018,0l-.493-3.851a.96.96,0,0,1,1-1Zm0,6.142a.885.885,0,1,1-.885.885A.883.883,0,0,1,6.981,289.233Z" fill="#d6000f"/>
+        </g>
+      </svg>
+    
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="icon-success"  style="opacity: 0;left:40px;">
+      <g id="_1491001_check_done_ok_icon" data-name="1491001_check_done_ok_icon" transform="translate(0 0.475)">
+        <circle id="Elipse_120" data-name="Elipse 120" cx="7" cy="7" r="7" transform="translate(1 0.525)" fill="#b9c966"/>
+        <path id="Caminho_23287" data-name="Caminho 23287" d="M8.977,14.013h0a.491.491,0,0,1-.442-.189L6.706,11.743a.626.626,0,1,1,.946-.82L9.04,12.5l3.974-3.911a.624.624,0,0,1,.883.883L9.418,13.824A.681.681,0,0,1,8.977,14.013Z" transform="translate(-2.417 -3.142)" fill="#fff"/>
+        <rect id="Retângulo_39728" data-name="Retângulo 39728" width="16" height="16" transform="translate(0 -0.475)" fill="none"/>
+      </g>
+    </svg>
+  
+    <span class="error-message font-italic text-danger pl-md" id="passwordSignin-message-error"></span>
+
+          <button 
+          data-action="show-password" 
+          type="button" 
+          class="btn bg-transparent text-grey-800"
+          aria-label="Mostrar senha"
+      >
+          <i class="far fa-eye"></i>
+      </button>       
+    </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-xl">
+        <div class="col-12 col-md-12 text-center">
+          <a href="#" title="esqueceu sua senha?" class='resetar-senha' style="text-decoration:underline">Esqueceu sua senha? </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-12 flex flex--center-x">
+            <div class="form__input-wrapper">
+                <button class="signin-submit btn rounded--lg btn--hover bg-orange-100 text-white text--xsm btn--border-transparent">
+                    <div class="spinner">
+                        <span></span>
+                    </div>
+                    <span class="signin-submit__text">
+                        Entrar
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</form>                  </div>
+                   <div class="main-header__signup content " data-content="Cadastro" id="content1">
+                    <form id="signup-form" class="form__content" novalidate form-validade>
+    <div id="form__content-server-messages"></div>
+    <input type="hidden" name="CRAFT_CSRF_TOKEN" value="jDfBEgU-mXbfAPeP7yQEnfc1WWsc0kN90HtZ0LtscAucs_CHM7bQa_xHiSFSCPozvnGv6qtmR9KTDDM5Reo2L5kTK7qIKgN_xvjE9EmA5Ds=">
+    <div class="row">
+        <div class="flex flex--center-x col-12 col-md-12 pb-md mb-lg">
+            <div class="form__input-wrapper">
+                <fieldset class="input-group ">
+    <input
+        type="text"
+        id="name"
+        name="name"
+        data-errorMessage="Preencha o campo obrigatório."
+        data-messageError="Revise seus dados"
+        class="input contato__input"
+        value=""
+         data-minlength="3"                  required="1"          placeholder="Nome completo*"          autocomplete="ff"                         required
+            >
+            <label for="name" class="block pb-sm ">Nome completo*</label>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13.961" height="13.961" viewBox="0 0 13.961 13.961" class="icon-error">
+        <g id="layer1" transform="translate(0 -280.067)">
+          <path id="path10598" d="M6.981,280.067a6.98,6.98,0,1,0,6.98,6.98,6.98,6.98,0,0,0-6.98-6.98Zm0,3.024a.96.96,0,0,1,1,1l-.493,3.851a.509.509,0,1,1-1.018,0l-.493-3.851a.96.96,0,0,1,1-1Zm0,6.142a.885.885,0,1,1-.885.885A.883.883,0,0,1,6.981,289.233Z" fill="#d6000f"/>
+        </g>
+      </svg>
+    
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="icon-success" >
+      <g id="_1491001_check_done_ok_icon" data-name="1491001_check_done_ok_icon" transform="translate(0 0.475)">
+        <circle id="Elipse_120" data-name="Elipse 120" cx="7" cy="7" r="7" transform="translate(1 0.525)" fill="#b9c966"/>
+        <path id="Caminho_23287" data-name="Caminho 23287" d="M8.977,14.013h0a.491.491,0,0,1-.442-.189L6.706,11.743a.626.626,0,1,1,.946-.82L9.04,12.5l3.974-3.911a.624.624,0,0,1,.883.883L9.418,13.824A.681.681,0,0,1,8.977,14.013Z" transform="translate(-2.417 -3.142)" fill="#fff"/>
+        <rect id="Retângulo_39728" data-name="Retângulo 39728" width="16" height="16" transform="translate(0 -0.475)" fill="none"/>
+      </g>
+    </svg>
+    
+    <span class="error-message font-italic text-danger pl-md" id="name-message-error"></span>
+
+    </fieldset>
+            </div>
+        </div>
+        <div class="flex flex--center-x col-12 col-md-12 pb-md mb-lg">
+            <div class="form__input-wrapper">
+                <fieldset class="input-group ">
+    <input
+        type="text"
+        id="usernameSignup"
+        name="username"
+        data-errorMessage="Preencha o campo obrigatório."
+        data-messageError="Revise seus dados"
+        class="input email contato__input"
+        value=""
+         data-minlength="3"                  required="1"          placeholder="E-mail*"          autocomplete="ff"                         required
+            >
+            <label for="usernameSignup" class="block pb-sm ">E-mail*</label>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13.961" height="13.961" viewBox="0 0 13.961 13.961" class="icon-error">
+        <g id="layer1" transform="translate(0 -280.067)">
+          <path id="path10598" d="M6.981,280.067a6.98,6.98,0,1,0,6.98,6.98,6.98,6.98,0,0,0-6.98-6.98Zm0,3.024a.96.96,0,0,1,1,1l-.493,3.851a.509.509,0,1,1-1.018,0l-.493-3.851a.96.96,0,0,1,1-1Zm0,6.142a.885.885,0,1,1-.885.885A.883.883,0,0,1,6.981,289.233Z" fill="#d6000f"/>
+        </g>
+      </svg>
+    
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="icon-success" >
+      <g id="_1491001_check_done_ok_icon" data-name="1491001_check_done_ok_icon" transform="translate(0 0.475)">
+        <circle id="Elipse_120" data-name="Elipse 120" cx="7" cy="7" r="7" transform="translate(1 0.525)" fill="#b9c966"/>
+        <path id="Caminho_23287" data-name="Caminho 23287" d="M8.977,14.013h0a.491.491,0,0,1-.442-.189L6.706,11.743a.626.626,0,1,1,.946-.82L9.04,12.5l3.974-3.911a.624.624,0,0,1,.883.883L9.418,13.824A.681.681,0,0,1,8.977,14.013Z" transform="translate(-2.417 -3.142)" fill="#fff"/>
+        <rect id="Retângulo_39728" data-name="Retângulo 39728" width="16" height="16" transform="translate(0 -0.475)" fill="none"/>
+      </g>
+    </svg>
+    
+    <span class="error-message font-italic text-danger pl-md" id="usernameSignup-message-error"></span>
+
+    </fieldset>
+            </div>
+        </div>
+        <div class="flex flex--center-x col-12 col-md-12 pb-md mb-lg">
+            <div class="form__input-wrapper">
+                <fieldset class="input-group ">
+    <input
+        type="password"
+        id="passwordSignup"
+        name="password"
+        data-errorMessage="Preencha o campo obrigatório."
+        data-messageError="Revise seus dados"
+        class="input contato__input"
+        value=""
+         data-minlength="3"                  required="1"          placeholder="Senha*"          autocomplete="ff"                  data-input="show-password"         required
+            >
+            <label for="passwordSignup" class="block pb-sm ">Senha*</label>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13.961" height="13.961" viewBox="0 0 13.961 13.961" class="icon-error" style="opacity: 0;left:40px;">
+        <g id="layer1" transform="translate(0 -280.067)">
+          <path id="path10598" d="M6.981,280.067a6.98,6.98,0,1,0,6.98,6.98,6.98,6.98,0,0,0-6.98-6.98Zm0,3.024a.96.96,0,0,1,1,1l-.493,3.851a.509.509,0,1,1-1.018,0l-.493-3.851a.96.96,0,0,1,1-1Zm0,6.142a.885.885,0,1,1-.885.885A.883.883,0,0,1,6.981,289.233Z" fill="#d6000f"/>
+        </g>
+      </svg>
+    
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="icon-success"  style="opacity: 0;left:40px;">
+      <g id="_1491001_check_done_ok_icon" data-name="1491001_check_done_ok_icon" transform="translate(0 0.475)">
+        <circle id="Elipse_120" data-name="Elipse 120" cx="7" cy="7" r="7" transform="translate(1 0.525)" fill="#b9c966"/>
+        <path id="Caminho_23287" data-name="Caminho 23287" d="M8.977,14.013h0a.491.491,0,0,1-.442-.189L6.706,11.743a.626.626,0,1,1,.946-.82L9.04,12.5l3.974-3.911a.624.624,0,0,1,.883.883L9.418,13.824A.681.681,0,0,1,8.977,14.013Z" transform="translate(-2.417 -3.142)" fill="#fff"/>
+        <rect id="Retângulo_39728" data-name="Retângulo 39728" width="16" height="16" transform="translate(0 -0.475)" fill="none"/>
+      </g>
+    </svg>
+  
+    <span class="error-message font-italic text-danger pl-md" id="passwordSignup-message-error"></span>
+
+          <button 
+          data-action="show-password" 
+          type="button" 
+          class="btn bg-transparent text-grey-800"
+          aria-label="Mostrar senha"
+      >
+          <i class="far fa-eye"></i>
+      </button>       
+    </fieldset>
+            </div>
+        </div>
+        <div class="flex flex--center-x col-12 col-md-12 pb-md mb-lg">
+            <div class="form__input-wrapper">
+                <fieldset class="input-group ">
+    <input
+        type="password"
+        id="confPassword"
+        name="confPassword"
+        data-errorMessage="Preencha o campo obrigatório."
+        data-messageError="Revise seus dados"
+        class="input contato__input"
+        value=""
+         data-minlength="3"                  required="1"          placeholder="Confirmar Senha*"          autocomplete="off"                  data-input="show-password"         required
+            >
+            <label for="confPassword" class="block pb-sm ">Confirmar Senha*</label>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13.961" height="13.961" viewBox="0 0 13.961 13.961" class="icon-error" style="opacity: 0;left:40px;">
+        <g id="layer1" transform="translate(0 -280.067)">
+          <path id="path10598" d="M6.981,280.067a6.98,6.98,0,1,0,6.98,6.98,6.98,6.98,0,0,0-6.98-6.98Zm0,3.024a.96.96,0,0,1,1,1l-.493,3.851a.509.509,0,1,1-1.018,0l-.493-3.851a.96.96,0,0,1,1-1Zm0,6.142a.885.885,0,1,1-.885.885A.883.883,0,0,1,6.981,289.233Z" fill="#d6000f"/>
+        </g>
+      </svg>
+    
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="icon-success"  style="opacity: 0;left:40px;">
+      <g id="_1491001_check_done_ok_icon" data-name="1491001_check_done_ok_icon" transform="translate(0 0.475)">
+        <circle id="Elipse_120" data-name="Elipse 120" cx="7" cy="7" r="7" transform="translate(1 0.525)" fill="#b9c966"/>
+        <path id="Caminho_23287" data-name="Caminho 23287" d="M8.977,14.013h0a.491.491,0,0,1-.442-.189L6.706,11.743a.626.626,0,1,1,.946-.82L9.04,12.5l3.974-3.911a.624.624,0,0,1,.883.883L9.418,13.824A.681.681,0,0,1,8.977,14.013Z" transform="translate(-2.417 -3.142)" fill="#fff"/>
+        <rect id="Retângulo_39728" data-name="Retângulo 39728" width="16" height="16" transform="translate(0 -0.475)" fill="none"/>
+      </g>
+    </svg>
+  
+    <span class="error-message font-italic text-danger pl-md" id="confPassword-message-error"></span>
+
+          <button 
+          data-action="show-password" 
+          type="button" 
+          class="btn bg-transparent text-grey-800"
+          aria-label="Mostrar senha"
+      >
+          <i class="far fa-eye"></i>
+      </button>       
+    </fieldset>
+            </div>
+        </div>
+    </div>
+        <div class="row mb-sm">
+        <div class="col-12 col-md-12 flex flex--center-x">
+            <div class="form__input-wrapper">
+                                <div class="pb-sm">
+                    <fieldset>
+    <div class="toggler flex flex--align-center flex--nowrap ">
+        <label class="toggler-wrapper">
+            <input
+            type="checkbox"
+            id="acceptNews"
+            name="acceptNews"
+            data-errorMessage="*Campo inválido"
+            data-messageError="Revise seus dados"
+            class="checkbox"
+                                >
+        <div class="toggler-slider">
+            <div class="toggler-knob"></div>
+        </div>
+    </label>
+                    <label for="acceptNews" class="pl-sm text-regular text--xxsm">Desejo receber novidades. Ao realizar o cadastro.</label>
+            </div>
+    <span class="error-message font-italic text--xxsm text-danger pl-md" id="acceptNews-message-error"></span>
+</fieldset>
+
+                </div>
+                                <div class="pb-sm">
+                    <fieldset>
+    <div class="toggler flex flex--align-center flex--nowrap ">
+        <label class="toggler-wrapper">
+            <input
+            type="checkbox"
+            id="acceptTerms"
+            name="acceptTerms"
+            data-errorMessage="Você precisa concordar com as Política de Privacidade"
+            data-messageError="Revise seus dados"
+            class="checkbox"
+                         required="1"         >
+        <div class="toggler-slider">
+            <div class="toggler-knob"></div>
+        </div>
+    </label>
+                    <label for="acceptTerms" class="pl-sm text-regular text--xxsm">Você aceita o <a href="/dist/termo-de-uso.pdf" download="termo-de-uso.pdf">Termo de uso</a> e <a href="/dist/politica-de-privacidade.pdf" target="_blank" download>Política de Privacidade</a> da plataforma.</label>
+            </div>
+    <span class="error-message font-italic text--xxsm text-danger pl-md" id="acceptTerms-message-error"></span>
+</fieldset>
+
+                </div>
+                            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-12 flex flex--center-x">
+            <div class="form__input-wrapper">
+                <button id="btn-signup-submit" class="signup-submit btn rounded--lg btn--hover bg-orange-100 text-white text--xsm btn--border-transparent">
+                    <div class="spinner">
+                        <span></span>
+                    </div>
+                    <span class="signup-submit__text">
+                        Cadastrar
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</form>                   </div>
+                 </div>
+            </div>
+        </div>
+        </div>
+        </section>
+    </header>
+    </main>
+    <script src="Script.js"></script>
+     </body>
+</html>
